@@ -1,45 +1,56 @@
 import React, { useState } from "react";
 import ListOfItems from "./ListOfItems";
+import { ToastContainer, toast } from "react-toastify";
+import { nanoid } from "nanoid";
+
+const setLocalStorage = (items) => {
+  localStorage.setItem("list", JSON.stringify(items));
+};
+const defaultList = JSON.parse(localStorage.getItem("list") || "[]");
 
 const DmartItems = () => {
-  const [name, setName] = useState("");
-  const [list, setList] = useState([]);
+  const [items, setItems] = useState(defaultList);
+  const [newItemName, setNewItemName] = useState("");
+
+  const addItem = (itemName)=>{
+    const newItem = {
+      id: nanoid(),
+      name: itemName,
+      completed: false,
+    };
+    const newItems = [...items,newItem]
+    setItems(newItems);
+    setLocalStorage(newItems);
+    toast.success('item added')
+  }
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!name) {
-      alert("enter the value");
-    } else {
-      // Create a new item with a unique id and the user's input
-      // const newItem = { id: `${Date.now()}`, title: name };
-      const newItem1 = { id: `${Date.now()}`, title: name };
-      const newItem = { id: new Date().getTime().toString(), title: name };
-      console.log("newItem", newItem, newItem1);
-
-      // Add the new item to the list by spreading the current list and adding the new item
-      setList([...list, newItem]);
-      setName("");
+    if(!newItemName){
+      toast.error('please provide value')
+      return
     }
-  };
-  console.log("list>>>>>>>", list);
-
+    addItem(newItemName);
+    setNewItemName("");
+  }
   return (
     <div className="container shadow-xl p-6 mt-3">
+      <ToastContainer position="top-center" />
       <p className="">shvsbvhsbvhdshvbhsbdvhsdbv</p>
       <form onClick={handleSubmit}>
         <div className="flex justify-center">
           <input
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={newItemName}
+            onChange={(e) => setNewItemName(e.target.value)}
             className=" px-2 py-1 bg-[#f1f5f8] rounded-md flex-grow flex-shrink-0 flex-auto"
             type="text"
             placeholder="chocolates"
           />
           <button className="py-1 px-4 text-sm bg-[#a5d5f8] hover:bg-[#49a6e9] hover:text-white capitalize tracking-widest transition-all duration-200 ease-linear">
-            submit
+            add item
           </button>
         </div>
       </form>
-      {list.length > 0 && <ListOfItems list={list} />}
+      {/* <Items items={items} /> */}
     </div>
   );
 };
