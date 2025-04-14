@@ -1,0 +1,34 @@
+import React, { useState } from 'react'
+
+const RatingReview = () => {
+    const [rating, setRating] = useState(0);
+    
+  return (
+    <div className=''>
+      {[1, 2, 3, 4, 5].map((star) => {        
+        return (
+            <span
+              key={star}
+              className={`transition-all duration-200 ease-linear ${
+                rating >= star
+                  ? "text-yellow-400"
+                  : "text-gray-400 hover:text-yellow-400"
+              }`}
+              style={{
+                cursor: "pointer",
+                fontSize: `35px`,
+              }}
+              onClick={() => {
+                setRating(star);
+              }}
+            >
+              {" "}
+              ★{" "}
+            </span>
+        );
+      })}
+    </div>
+  );
+}
+
+export default RatingReview
