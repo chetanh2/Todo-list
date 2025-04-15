@@ -7,7 +7,7 @@ import "./transferlist.css";
 function TransferList() {
   // State for the left list, right list, and checked items
   const [leftData, setLeftData] = useState(items);
-  const [rightData, setRightData] = useState([2]);
+  const [rightData, setRightData] = useState([]);
   const [checkedItem, setCheckedItems] = useState([]);
 
   // Function to handle toggling items
