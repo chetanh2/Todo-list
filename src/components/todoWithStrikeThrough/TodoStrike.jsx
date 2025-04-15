@@ -90,6 +90,7 @@ const TodoStrike = () => {
   console.log("items>>>>>>>>>>", items);
   
   return (
+  <section className="section-center max-w-3xl mx-auto mt-60">
     <div className="">
       <ToastContainer position="top-center" />
       <Form
@@ -110,6 +111,7 @@ const TodoStrike = () => {
         toggleCompleted={toggleCompleted}
       />
     </div>
+  </section>
   );
 }
 

@@ -4,7 +4,7 @@ const StarReviewWithHover = () => {
   const [rating, setRating] = useState(0);
   const [hoveredStar, setHoveredStar] = useState(0);
   return (
-    <div className="flex gap-2 items-center">
+    <div className="flex gap-2 items-center my-28 justify-center">
       {[1, 2, 3, 4, 5].map((star) => {
           return (
           <div

@@ -14,3 +14,4 @@ export const MovieCard = ({ title, description, key }) => {
     </div>
   );
 };
+  

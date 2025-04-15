@@ -9,19 +9,22 @@ import TodoStrike from "./components/todoWithStrikeThrough/TodoStrike";
 import RatingReview from "./components/starRating/RatingReview";
 import StarReviewWithHover from "./components/starRating/StarReviewWithHover";
 import InfiniteScroll from "./components/infiniteScroll/InfiniteScroll";
+import Pagination from "./components/pagination/Pagination";
+import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
+import Header from "./Header";
 
 function App() {
 
   return (
     <div className="">
-      <InfiniteScroll/>
-    <section className="section-center max-w-3xl mx-auto mt-60">
+      {/* <InfiniteScroll/> */}
+      {/* <section className="section-center max-w-3xl mx-auto mt-60">
       <div className="grid gap-y-3">
         <RatingReview/>
         <StarReviewWithHover />
         <TodoStrike />
       </div>
-    </section>
+    </section> */}
     </div>
   );
 }
