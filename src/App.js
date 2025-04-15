@@ -1,17 +1,7 @@
 /* eslint-disable */
-import React, { useState, useEffect } from "react";
-import List from "./components/todoList/List";
-import Alert from "./Alert";
-import DmartItems from "./components/DmartItems";
+import React from "react";
 import "./App.css";
 import "./index.css";
-import TodoStrike from "./components/todoWithStrikeThrough/TodoStrike";
-import RatingReview from "./components/starRating/RatingReview";
-import StarReviewWithHover from "./components/starRating/StarReviewWithHover";
-import InfiniteScroll from "./components/infiniteScroll/InfiniteScroll";
-import Pagination from "./components/pagination/Pagination";
-import { BrowserRouter, Outlet, Route, Routes } from "react-router-dom";
-import Header from "./Header";
 
 function App() {
 
