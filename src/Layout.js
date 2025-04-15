@@ -53,6 +53,18 @@ const Layout = () => {
               Infinite Scroll
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? "text-red-500 underline underline-offset-4"
+                  : "text-black"
+              }
+              to={"/transferList"}
+            >
+              Transfer List
+            </NavLink>
+          </li>
         </ul>
       </div>
       {/* <hr className="divider" /> */}
