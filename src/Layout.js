@@ -3,7 +3,7 @@ import { Outlet, Link, NavLink } from "react-router-dom";
 const Layout = () => {
   return (
     <>
-      <div className="flex justify-between px-8 py-4 shadow-lg">
+      <div className="flex justify-center px-8 py-4 shadow-lg">
         <ul className="flex justify-between items-center gap-6 uppercase">
           <li>
             <NavLink
@@ -63,6 +63,18 @@ const Layout = () => {
               to={"/transferList"}
             >
               Transfer List
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              className={({ isActive }) =>
+                isActive
+                  ? "text-red-500 underline underline-offset-4"
+                  : "text-black"
+              }
+              to={"/countdownTimer"}
+            >
+              Countdown Timer
             </NavLink>
           </li>
         </ul>
