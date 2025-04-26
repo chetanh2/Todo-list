@@ -70,7 +70,7 @@ const ClientSidePagination = () => {
   const handleSearchChange = (e) => {
     setSearch(e.target.value);
   };
-  console.log("filteredUsers", filteredUsers);
+
   
   return (
     <section className='bg-[#282C34] h-full'>
