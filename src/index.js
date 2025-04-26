@@ -10,6 +10,7 @@ import StarReviewWithHover from './components/starRating/StarReviewWithHover';
 import InfiniteScroll from './components/infiniteScroll/InfiniteScroll';
 import TransferList from './components/transferList/TransferList';
 import CountDownTimer from './components/countDownTimer/CountDownTimer';
+import ClientSidePagination from './components/clientPagination/ClientSidePagination';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,6 +19,7 @@ ReactDOM.render(
         <Route path="/" element={<Layout />}>
           <Route index element={<TodoStrike />} />
           <Route path="pagination" element={<Pagination />} />
+          <Route path="client-side-pagination" element={<ClientSidePagination />} />
           <Route path="starReview" element={<StarReviewWithHover />} />
           <Route path="/infiniteScroll" element={<InfiniteScroll />} />
           <Route path="/transferList" element={<TransferList />} />
