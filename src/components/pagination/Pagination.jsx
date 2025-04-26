@@ -58,84 +58,87 @@ const Pagination = () => {
   };
 
   return (
-    <div className="container mx-auto p-6 max-w-4xl">
-      <h1 className="text-3xl font-bold mb-6 text-gray-800">Posts</h1>
+    <section className="bg-[#282C34] ">
 
-      <div className="flex justify-between items-center mb-6">
-        <div className="flex items-center gap-2">
-          <label htmlFor="limit" className="text-gray-600 font-medium">
-            Posts per page:
-          </label>
-          <select
-            id="limit"
-            value={limit}
-            onChange={handleLimitChange}
-            className="border rounded-lg px-3 py-2 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            disabled={loading}
-          >
-            {limitOptions.map((option) => (
-              <option key={option} value={option}>
-                {option}
-              </option>
-            ))}
-          </select>
-        </div>
-        <span className="text-lg font-medium text-gray-600">Page {page}</span>
-      </div>
+      <div className="container mx-auto p-6 max-w-6xl ">
+        <h1 className="text-3xl font-bold mb-6 text-white">Posts</h1>
 
-      {error && (
-        <p className="text-red-500 bg-red-50 p-3 rounded-lg mb-4">{error}</p>
-      )}
-
-      <div className="grid gap-6">
-        {data.map((post) => (
-          <div
-            key={post.id}
-            className="border border-gray-200 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow"
-          >
-            <h2 className="text-xl font-semibold text-gray-800 mb-2 capitalize">
-              {post.title}
-            </h2>
-            <p className="text-gray-600">{post.body}</p>
+        <div className="flex justify-between items-center mb-6">
+          <div className="flex items-center gap-2">
+            <label htmlFor="limit" className="text-white font-medium">
+              Posts per page:
+            </label>
+            <select
+              id="limit"
+              value={limit}
+              onChange={handleLimitChange}
+              className="border rounded-lg px-3 py-2 bg-white text-black focus:outline-none focus:ring-2 focus:ring-blue-500"
+              disabled={loading}
+            >
+              {limitOptions.map((option) => (
+                <option key={option} value={option}>
+                  {option}
+                </option>
+              ))}
+            </select>
           </div>
-        ))}
+          <span className="text-lg font-medium text-white">Page {page}</span>
+        </div>
+
+        {error && (
+          <p className="text-red-500 bg-red-50 p-3 rounded-lg mb-4">{error}</p>
+        )}
+
+        <div className="grid gap-6">
+          {data.map((post) => (
+            <div
+              key={post.id}
+              className="border border-gray-200 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+            >
+              <h2 className="text-xl font-semibold text-gray-300 mb-2 capitalize">
+                {post.title}
+              </h2>
+              <p className="text-white">{post.body}</p>
+            </div>
+          ))}
+        </div>
+
+        {loading && (
+          <p className="text-center mt-6 text-gray-500 animate-pulse">
+            Loading...
+          </p>
+        )}
+
+        {!loading && data.length === 0 && !error && (
+          <p className="text-center mt-6 text-gray-500">No posts found.</p>
+        )}
+
+        <div className="flex justify-center gap-4 mt-8">
+          <button
+            onClick={handlePrevPage}
+            disabled={page === 1 || loading}
+            className={`px-6 py-2 rounded-lg font-medium transition-colors ${
+              page === 1 || loading
+                ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                : "bg-blue-600 text-white hover:bg-blue-700"
+            }`}
+          >
+            Previous
+          </button>
+          <button
+            onClick={handleNextPage}
+            disabled={loading || !hasMore}
+            className={`px-6 py-2 rounded-lg font-medium transition-colors ${
+              loading || !hasMore
+                ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                : "bg-blue-600 text-white hover:bg-blue-700"
+            }`}
+          >
+            Next
+          </button>
+        </div>
       </div>
-
-      {loading && (
-        <p className="text-center mt-6 text-gray-500 animate-pulse">
-          Loading...
-        </p>
-      )}
-
-      {!loading && data.length === 0 && !error && (
-        <p className="text-center mt-6 text-gray-500">No posts found.</p>
-      )}
-
-      <div className="flex justify-center gap-4 mt-8">
-        <button
-          onClick={handlePrevPage}
-          disabled={page === 1 || loading}
-          className={`px-6 py-2 rounded-lg font-medium transition-colors ${
-            page === 1 || loading
-              ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-              : "bg-blue-600 text-white hover:bg-blue-700"
-          }`}
-        >
-          Previous
-        </button>
-        <button
-          onClick={handleNextPage}
-          disabled={loading || !hasMore}
-          className={`px-6 py-2 rounded-lg font-medium transition-colors ${
-            loading || !hasMore
-              ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-              : "bg-blue-600 text-white hover:bg-blue-700"
-          }`}
-        >
-          Next
-        </button>
-      </div>
-    </div>
+    </section>
   );
 };
 export default Pagination

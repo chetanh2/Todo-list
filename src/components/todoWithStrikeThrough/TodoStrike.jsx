@@ -3,6 +3,7 @@ import Form from './Form';
 import { ToastContainer, toast } from "react-toastify";
 import Items from './Items';
 import { nanoid } from 'nanoid';
+import "../../App.css"
 
   const setLocalStorage = (items) => {
     localStorage.setItem("Dmart Item list", JSON.stringify(items));
@@ -90,28 +91,33 @@ const TodoStrike = () => {
   console.log("items>>>>>>>>>>", items);
   
   return (
-  <section className="section-center max-w-3xl mx-auto mt-60">
-    <div className="">
-      <ToastContainer position="top-center" />
-      <Form
-        addItem={addItem}
-        newItemName={newItemName}
-        setNewItemName={setNewItemName}
-        isEditing={isEditing}
-        editID={editID}
-        setItems={setItems}
-        items={items}
-        setIsEditing={setIsEditing}
-        setLocalStorage={setLocalStorage}
-      />
-      <Items
-        removeItem={removeItem}
-        items={items}
-        editItem={editItem}
-        toggleCompleted={toggleCompleted}
-      />
+    <div className="bg-[#282C34] h-screen">
+      <div className="pt-28">
+
+        <section className="section-center max-w-3xl mx-auto shadow-xl  p-6 rounded-lg">
+          <div className="">
+            <ToastContainer position="top-center" />
+            <Form
+              addItem={addItem}
+              newItemName={newItemName}
+              setNewItemName={setNewItemName}
+              isEditing={isEditing}
+              editID={editID}
+              setItems={setItems}
+              items={items}
+              setIsEditing={setIsEditing}
+              setLocalStorage={setLocalStorage}
+            />
+            <Items
+              removeItem={removeItem}
+              items={items}
+              editItem={editItem}
+              toggleCompleted={toggleCompleted}
+            />
+          </div>
+        </section>
+      </div>
     </div>
-  </section>
   );
 }
 

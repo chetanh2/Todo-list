@@ -3,14 +3,14 @@ import { Outlet, Link, NavLink } from "react-router-dom";
 const Layout = () => {
   return (
     <>
-      <div className="flex justify-center px-8 py-4 shadow-lg bg-gray-800">
+      <div className="flex justify-center px-8 py-4 shadow-lg bg-[#0F0F0F] ">
         <ul className="flex justify-between items-center gap-6 uppercase">
           <li>
             <NavLink
               className={({ isActive }) =>
                 isActive
                   ? "text-red-500 underline underline-offset-4"
-                  : "text-black"
+                  : "text-white"
               }
               to={"/"}
             >
@@ -22,7 +22,7 @@ const Layout = () => {
               className={({ isActive }) =>
                 isActive
                   ? "text-red-500 underline underline-offset-4"
-                  : "text-black"
+                  : "text-white"
               }
               to={"/pagination"}
             >
@@ -34,7 +34,7 @@ const Layout = () => {
               className={({ isActive }) =>
                 isActive
                   ? "text-red-500 underline underline-offset-4"
-                  : "text-black"
+                  : "text-white"
               }
               to={"/client-side-pagination"}
             >
@@ -46,7 +46,7 @@ const Layout = () => {
               className={({ isActive }) =>
                 isActive
                   ? "text-red-500 underline underline-offset-4"
-                  : "text-black"
+                  : "text-white"
               }
               to={"/starReview"}
             >
@@ -58,7 +58,7 @@ const Layout = () => {
               className={({ isActive }) =>
                 isActive
                   ? "text-red-500 underline underline-offset-4"
-                  : "text-black"
+                  : "text-white"
               }
               to={"/infiniteScroll"}
             >
@@ -70,7 +70,7 @@ const Layout = () => {
               className={({ isActive }) =>
                 isActive
                   ? "text-red-500 underline underline-offset-4"
-                  : "text-black"
+                  : "text-white"
               }
               to={"/transferList"}
             >
@@ -82,7 +82,7 @@ const Layout = () => {
               className={({ isActive }) =>
                 isActive
                   ? "text-red-500 underline underline-offset-4"
-                  : "text-black"
+                  : "text-white"
               }
               to={"/countdownTimer"}
             >

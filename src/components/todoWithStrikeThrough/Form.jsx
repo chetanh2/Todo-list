@@ -42,7 +42,7 @@ const Form = ({
         <input
           value={newItemName}
           onChange={(e) => setNewItemName(e.target.value)}
-          className=" px-2 py-1 bg-[#f1f5f8] rounded-md flex-auto"
+          className="border border-gray-400 rounded-r-none px-2 py-1 bg-[#f1f5f8] rounded-md flex-auto"
           type="text"
           placeholder="chocolates"
         />

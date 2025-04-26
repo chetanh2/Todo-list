@@ -150,7 +150,7 @@ Variables
     width: 90vw;
     margin: 0 auto;
     max-width: 35rem;
-    margin-top: 8rem;
+    padding-top: 8rem;
   }
   @media screen and (min-width: 992px) {
     .section-center {
