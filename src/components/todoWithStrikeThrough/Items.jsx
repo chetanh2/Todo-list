@@ -20,7 +20,7 @@ const Items = ({ items, removeItem, toggleCompleted, editItem }) => {
               className={`m-0 capitalize ${
                 item?.completed
                   ? "line-through"
-                  : "underline underline-offset-2"
+                  : ""
               }`}
             >
               { item?.title}

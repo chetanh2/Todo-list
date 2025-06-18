@@ -4,6 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import Items from './Items';
 import { nanoid } from 'nanoid';
 import "../../App.css"
+import TodoTp from '../todotp/TodoTp';
 
   const setLocalStorage = (items) => {
     localStorage.setItem("Dmart Item list", JSON.stringify(items));
@@ -58,7 +59,7 @@ const TodoStrike = () => {
     const newItem = {
       title: itemName,
       completed: false,
-      id: nanoid(),
+      id: new Date().getTime().toString(),
     };
     const newItems = [...items, newItem];
     setItems(newItems);
@@ -116,6 +117,7 @@ const TodoStrike = () => {
             />
           </div>
         </section>
+        <TodoTp/>
       </div>
     </div>
   );
